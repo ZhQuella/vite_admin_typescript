@@ -1,5 +1,5 @@
 {
-  "name": "vite_admin",
+  "name": "vite_admin_typescript",
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
