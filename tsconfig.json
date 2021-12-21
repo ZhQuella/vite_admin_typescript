@@ -9,24 +9,19 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["vite/client"]
-  },
-  "baseUrl": ".",
-  "paths": {
-    "@": ["/src"],
-    "@/*": ["/src/*"],
-    "components": ["/src/components"],
-    "components/*": ["/src/components/*"],
-    "api": ["src/apis"],
-    "api/*": ["src/apis/*"],
-    "utils/*": ["src/utils/*"],
-    "utils": ["src/utils"],
-    "pages": ["src/pages"],
-    "pages/*": ["src/pages/*"],
-    "hooks": ["src/hooks"],
-    "hooks/*": ["src/hooks/*"],
-    "types": ["src/types"],
-    "types/*": ["src/types"]
+    "types": ["vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "components/*": ["/src/components/*"],
+      "api/*": ["src/apis/*"],
+      "utils/*": ["src/utils/*"],
+      "pages/*": ["src/pages/*"],
+      "hooks/*": ["src/hooks/*"],
+      "types/*": ["src/types/*"],
+      "plugin/*": ["src/plugins/*"],
+      "plugin": ["src/plugins/index"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

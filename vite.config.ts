@@ -1,6 +1,9 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import eslintPlugin from 'vite-plugin-eslint';
+import { 
+  viteThemePlugin
+} from 'vite-plugin-theme';
 
 export default defineConfig({
   plugins: [
@@ -8,7 +11,13 @@ export default defineConfig({
       cache: false,
       exclude: ['script/**/*.js']
     }),
-    vue()
+    vue(),
+    viteThemePlugin({
+      injectTo: 'head',
+      colorVariables: [
+        'red'
+      ]
+    })
   ],
   css: {
 		preprocessorOptions: {
@@ -28,31 +37,35 @@ export default defineConfig({
     alias: [
       {
         find: "@",
-        replacement: "/src",
+        replacement: "/src"
       },
       {
         find: "pages",
-        replacement: "/src/pages",
+        replacement: "/src/pages"
       },
       {
         find: "components",
-        replacement: "/src/components",
+        replacement: "/src/components"
       },
       {
         find: "api",
-        replacement: "/src/apis",
+        replacement: "/src/apis"
       },
       {
         find: "utils",
-        replacement: "/src/utils",
+        replacement: "/src/utils"
       },
       {
         find: "hooks",
-        replacement: "/src/hooks",
+        replacement: "/src/hooks"
       },
       {
         find: "types",
-        replacement: "/src/interfaces",
+        replacement: "/src/interfaces"
+      },
+      {
+        find: "plugin",
+        replacement: "/src/plugins"
       }
     ]
   }

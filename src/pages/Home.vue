@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="box">
     Home
   </div>
 </template>
@@ -15,4 +15,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+#box {
+  color: red;
+}
+</style>
