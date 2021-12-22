@@ -7,7 +7,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "naive-ui": "^2.23.1",
     "pinia": "^2.0.6",
+    "reset-css": "^5.0.1",
     "vue": "^3.2.25",
     "vue-router": "^4.0.12"
   },

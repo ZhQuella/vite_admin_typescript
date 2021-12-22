@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import eslintPlugin from 'vite-plugin-eslint';
+
 import { 
   viteThemePlugin
 } from 'vite-plugin-theme';
@@ -14,9 +15,7 @@ export default defineConfig({
     vue(),
     viteThemePlugin({
       injectTo: 'head',
-      colorVariables: [
-        'red'
-      ]
+      colorVariables: []
     })
   ],
   css: {

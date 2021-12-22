@@ -1,6 +1,6 @@
 <template>
-  <div id="box">
-    Home
+  <div>
+    <n-button>Default</n-button>
   </div>
 </template>
 
@@ -16,7 +16,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-#box {
-  color: red;
-}
+
 </style>
