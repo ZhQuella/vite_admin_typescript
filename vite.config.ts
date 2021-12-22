@@ -21,6 +21,7 @@ export default defineConfig({
   css: {
 		preprocessorOptions: {
 			scss: {
+        additionalData: '@import "style/base/_var.scss";'
         /*
 				引入var.scss全局预定义变量，
 				如果引入多个文件，
@@ -65,6 +66,10 @@ export default defineConfig({
       {
         find: "plugin",
         replacement: "/src/plugins"
+      },
+      {
+        find: "style",
+        replacement: "/src/styles"
       }
     ]
   }

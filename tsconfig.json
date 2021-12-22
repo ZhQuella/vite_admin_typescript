@@ -20,7 +20,8 @@
       "hooks/*": ["src/hooks/*"],
       "types/*": ["src/types/*"],
       "plugin/*": ["src/plugins/*"],
-      "plugin": ["src/plugins/index"]
+      "plugin": ["src/plugins/index"],
+      "style/*": ["src/style/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

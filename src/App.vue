@@ -1,13 +1,13 @@
 <template>
-  <router-view />
+  <n-config-provider :theme-overrides="themeOverrides">
+    <router-view />
+  </n-config-provider>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script lang="ts" setup>
+import { NConfigProvider, GlobalThemeOverrides } from 'naive-ui'
 
-export default defineComponent({
-  setup() {
-    return {};
-  }
-});
+const themeOverrides: GlobalThemeOverrides = {
+  
+};
 </script>
