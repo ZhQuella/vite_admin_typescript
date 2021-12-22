@@ -1,10 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import eslintPlugin from 'vite-plugin-eslint';
-
-import { 
-  viteThemePlugin
-} from 'vite-plugin-theme';
+import { viteThemePlugin } from 'vite-plugin-theme';
 
 export default defineConfig({
   plugins: [
@@ -22,14 +19,6 @@ export default defineConfig({
 		preprocessorOptions: {
 			scss: {
         additionalData: '@import "style/base/_var.scss";'
-        /*
-				引入var.scss全局预定义变量，
-				如果引入多个文件，
-				可以使用
-				'@import "@/assets/scss/globalVariable1.scss";
-        @import "@/assets/scss/globalVariable2.scss";'
-				这种格式
-				*/
 			}
 		}
 	},
