@@ -10,7 +10,7 @@ export const createPlugin = (isBuild: boolean):Plugin[] => {
   const vitePlugins = [
     eslintPlugin({
       cache: false,
-      exclude: ['script/**/*.js', 'build/**/*.ts']
+      exclude: ['build/**/*.js', 'build/**/*.ts']
     }),
     vue()
   ];

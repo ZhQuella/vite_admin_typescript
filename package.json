@@ -35,7 +35,7 @@
     "yorkie": "^2.0.0"
   },
   "gitHooks": {
-    "commit-msg": "node scripts/commitMessage.js",
+    "commit-msg": "node build/scripts/commitMessage.js",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {

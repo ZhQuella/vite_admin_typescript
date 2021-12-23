@@ -1,8 +1,8 @@
 import type { UserConfig, ConfigEnv } from 'vite';
 import { loadEnv } from 'vite';
 
-import { createResolve, createCss } from "./build/other/index";
-import { createPlugin } from './build/plugin/index';
+import { createResolve, createCss } from "./build/vite/other/index";
+import { createPlugin } from './build/vite/plugin/index';
 
 export default ({ command, mode }: ConfigEnv): UserConfig => {
 
