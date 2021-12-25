@@ -48,6 +48,18 @@ export const createResolve = () => {
       {
         find: "style",
         replacement: "/src/styles"
+      },
+      {
+        find: "setting",
+        replacement: "/src/settings"
+      },
+      {
+        find: "/image",
+        replacement: "/src/assets/images"
+      },
+      {
+        find: "image",
+        replacement: "/src/assets/images"
       }
     ]
   }

@@ -15,13 +15,16 @@
       "@/*": ["src/*"],
       "components/*": ["/src/components/*"],
       "api/*": ["src/apis/*"],
+      "api": ["src/apis/index"],
       "utils/*": ["src/utils/*"],
       "pages/*": ["src/pages/*"],
       "hooks/*": ["src/hooks/*"],
       "types/*": ["src/types/*"],
       "plugin/*": ["src/plugins/*"],
       "plugin": ["src/plugins/index"],
-      "style/*": ["src/style/*"]
+      "style/*": ["src/style/*"],
+      "setting/*": ["src/settings/*"],
+      "image/*": ["src/assets/images/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]

@@ -1,11 +1,10 @@
 <template>
-  <n-config-provider :theme-overrides="darkTheme">
-    <n-button>123</n-button>
+  <n-config-provider>
     <router-view />
     <n-global-style />
   </n-config-provider>
 </template>
 
 <script lang="ts" setup>
-import { NConfigProvider, NGlobalStyle , darkTheme } from 'naive-ui';
+import { NConfigProvider, NGlobalStyle } from 'naive-ui';
 </script>
