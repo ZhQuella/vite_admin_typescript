@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { getSrc } from "util/systemUtils";
-console.log(getSrc);
+
 </script>
 
 <script lang="ts">
