@@ -16,7 +16,7 @@
       "components/*": ["/src/components/*"],
       "api/*": ["src/apis/*"],
       "api": ["src/apis/index"],
-      "utils/*": ["src/utils/*"],
+      "util/*": ["src/utils/*"],
       "pages/*": ["src/pages/*"],
       "hooks/*": ["src/hooks/*"],
       "types/*": ["src/types/*"],

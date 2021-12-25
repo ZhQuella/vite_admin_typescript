@@ -30,7 +30,7 @@ export const createResolve = () => {
         replacement: "/src/apis"
       },
       {
-        find: "utils",
+        find: "util",
         replacement: "/src/utils"
       },
       {
