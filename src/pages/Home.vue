@@ -1,5 +1,14 @@
 <template>
-  <div>Template </div>
+  <div class="n-p"> 
+    Template 
+  </div>
+  <n-button>123</n-button>
+  <div> 
+    jlkjl 
+  </div>
+  <div class="n-element"> 
+    111 
+  </div>
 </template>
 
 <script lang="ts" setup>
