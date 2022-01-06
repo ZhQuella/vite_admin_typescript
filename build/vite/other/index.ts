@@ -50,6 +50,10 @@ export const createResolve = () => {
         replacement: "/src/styles"
       },
       {
+        find: "store",
+        replacement: "/src/stores"
+      },
+      {
         find: "setting",
         replacement: "/src/settings"
       },

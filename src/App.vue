@@ -1,10 +1,10 @@
 <template>
-  <n-config-provider>
+  <n-config-provider :theme="null">
     <router-view />
     <n-global-style />
   </n-config-provider>
 </template>
 
 <script lang="ts" setup>
-import { NConfigProvider, NGlobalStyle } from 'naive-ui';
+import { NConfigProvider, NGlobalStyle, darkTheme } from 'naive-ui';
 </script>
