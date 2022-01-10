@@ -2,4 +2,18 @@
   position: fixed;
   right: 10px;
   top: 10px;
+  z-index: 1;
+}
+.login-continer-row {
+  height: 100vh;
+  .login-continer_sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .login-from-warp {
+    width: 620px;
+    height: 620px;
+  }
 }

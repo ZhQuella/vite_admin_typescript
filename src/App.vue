@@ -1,10 +1,22 @@
 <template>
-  <n-config-provider :theme="null">
+  <n-config-provider :theme="theme">
     <router-view />
-    <n-global-style />
+    <n-global-style
+      :style="{
+        backgroundColor: 'red'
+      }"
+    />
   </n-config-provider>
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
 import { NConfigProvider, NGlobalStyle, darkTheme } from 'naive-ui';
+import { useThemeStore } from "store/theme";
+
+const themeStore = useThemeStore();
+
+const theme = computed(() => {
+  return themeStore.isDark?darkTheme:null;
+});
 </script>
