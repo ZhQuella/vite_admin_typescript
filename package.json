@@ -20,7 +20,10 @@
     "@vitejs/plugin-vue": "^2.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
+    "@zougt/some-loader-utils": "^1.4.2",
+    "@zougt/vite-plugin-theme-preprocessor": "^1.4.4",
     "chalk": "^4.1.2",
+    "color": "^4.2.0",
     "eslint": "^8.4.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.2.0",
@@ -32,6 +35,7 @@
     "vite": "^2.7.2",
     "vite-plugin-eslint": "^1.3.0",
     "vite-plugin-svg-icons": "^1.1.0",
+    "vite-plugin-windicss": "^1.6.3",
     "vue-tsc": "^0.29.8",
     "yorkie": "^2.0.0"
   },

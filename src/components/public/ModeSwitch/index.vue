@@ -23,6 +23,7 @@
 <script lang="ts" setup>
 import { computed } from "vue";
 import { useThemeStore } from "store/theme";
+import { setTheme } from "util/systemUtils";
 
 const themeStore = useThemeStore();
 
@@ -35,8 +36,9 @@ const onThemeChange = (value: boolean) => {
 };
 
 themeStore.$subscribe((mutation, state) => {
-  const value = state.isDark?"dark":"";
+  const value = state.isDark?"dark":"light";
   localStorage.setItem("theme",value);
+  setTheme(`theme-${value}`);
 });
 
 const railStyle = ({ focused, checked }: { focused: boolean, checked: boolean }) => {
@@ -50,11 +52,18 @@ const railStyle = ({ focused, checked }: { focused: boolean, checked: boolean })
   }
   return style
 };
+
+const initTheme = () => {
+  const value = theme.value?"dark":"light";
+  setTheme(`theme-${value}`);
+};
+
+initTheme();
 </script>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 export default defineComponent({
   name: "ModeSwitch"
-})
+});
 </script>

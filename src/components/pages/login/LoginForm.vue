@@ -3,11 +3,11 @@
  * @Author: 张金龙
  * @Date: 2022-01-10 22:34:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-10 22:40:36
+ * @LastEditTime: 2022-01-19 10:03:56
 -->
 
 <template>
-  <div class="login-from__full">
+  <div class="login-from__full duration-350">
     123
   </div>
 </template>
