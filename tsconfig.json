@@ -29,5 +29,19 @@
       "image/*": ["src/assets/images/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "types/**/*.d.ts",
+    "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules", 
+    "dist", 
+    "**/*.js"
+  ]
 }

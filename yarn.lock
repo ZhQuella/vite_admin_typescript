@@ -184,6 +184,24 @@
   resolved "https://registry.nlark.com/@trysound/sax/download/@trysound/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
   integrity sha1-zMqrdYr1Z2Hre/N69vA/Mm3XmK0=
 
+"@types/color-string@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.npmmirror.com/@types/color-string/download/@types/color-string-1.5.2.tgz#cdb9879b6feca2aa27846adfc3988ef2413ee138"
+  integrity sha512-hAhTmfFYVdzgsKwpC9Flc6h9Do64PhKoNxy3YxE0ze+0LIh3a7TrDQAxiujmANQbDRDgGduEz+9sMS+Zd+J7hA==
+
+"@types/eslint@^8.4.0":
+  version "8.4.0"
+  resolved "https://registry.npmmirror.com/@types/eslint/download/@types/eslint-8.4.0.tgz#95712d5b32fd99a0d9493c31c6197ea7471c3ba6"
+  integrity sha512-JUYa/5JwoqikCy7O7jKtuNe9Z4ZZt615G+1EKfaDGSNEpzaA2OwbV/G1v08Oa7fd1XzlFoSCvt9ePl9/6FyAug==
+  dependencies:
+    "@types/estree" "*"
+    "@types/json-schema" "*"
+
+"@types/estree@*":
+  version "0.0.50"
+  resolved "https://registry.npmmirror.com/@types/estree/download/@types/estree-0.0.50.tgz#1e0caa9364d3fccd2931c3ed96fdbeaa5d4cca83"
+  integrity sha1-Hgyqk2TT/M0pMcPtlv2+ql1MyoM=
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.3"
   resolved "https://registry.npmmirror.com/@types/istanbul-lib-coverage/download/@types/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
@@ -211,7 +229,7 @@
     jest-diff "^27.0.0"
     pretty-format "^27.0.0"
 
-"@types/json-schema@^7.0.9":
+"@types/json-schema@*", "@types/json-schema@^7.0.9":
   version "7.0.9"
   resolved "https://registry.npmmirror.com/@types/json-schema/download/@types/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha1-l+3JA36gw4WFMgsolk3eOznkZg0=

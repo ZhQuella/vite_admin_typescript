@@ -3,14 +3,16 @@
  * @Author: Aaron
  * @Date: 2022-01-06 22:35:04
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-06 23:04:26
+ * @LastEditTime: 2022-01-20 15:14:35
  */
+
+import { busMap } from "types/bus";
 
 class EventBus {
 
-  private eventMap = {};
+  private eventMap: busMap = {};
 
-  public on(name:string, func): void {
+  public on(name:string, func: Fn): void {
     const { eventMap } = this;
     eventMap[name] = eventMap[name] || [];
     eventMap[name].push(func);
