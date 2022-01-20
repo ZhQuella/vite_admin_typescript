@@ -1,6 +1,7 @@
 <template>
   <div class="login-page-warp">
-    <div class="login-mode-switch">
+    <div class="login-mode-switch flex justify-between w-130px enter-x">
+      <locale-dropdown />
       <mode-switch />
     </div>
 
@@ -20,6 +21,7 @@
 
 <script lang="ts" setup>
 import ModeSwitch from "components/public/ModeSwitch/index.vue";
+import LocaleDropdown from "components/public/LocaleDropdown/index.vue";
 import Illustrations from 'components/pages/login/Illustrations.vue';
 import LoginForm from 'components/pages/login/LoginForm.vue';
 

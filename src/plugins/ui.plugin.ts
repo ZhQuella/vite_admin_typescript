@@ -1,9 +1,9 @@
 /*
  * @Description: 
- * @Author: 张金龙
+ * @Author: Aaron
  * @Date: 2021-12-22 21:54:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-20 12:12:09
+ * @LastEditTime: 2022-01-20 12:59:55
  */
 
 import { App } from 'vue';
@@ -18,7 +18,8 @@ import {
   NInput,
   NCheckbox,
   NDivider,
-  NIcon 
+  NIcon,
+  NDropdown
 } from "naive-ui";
 
 export default (app: App) => {
@@ -32,4 +33,5 @@ export default (app: App) => {
   app.component("NCheckbox", NCheckbox);
   app.component("NDivider",NDivider);
   app.component("NIcon", NIcon);
+  app.component("NDropdown", NDropdown);
 };

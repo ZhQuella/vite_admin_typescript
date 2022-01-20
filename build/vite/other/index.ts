@@ -39,7 +39,7 @@ export const createResolve = () => {
       },
       {
         find: "types",
-        replacement: "/src/interfaces"
+        replacement: "/types"
       },
       {
         find: "plugin",

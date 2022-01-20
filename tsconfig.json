@@ -19,7 +19,7 @@
       "util/*": ["src/utils/*"],
       "pages/*": ["src/pages/*"],
       "hooks/*": ["src/hooks/*"],
-      "types/*": ["src/types/*"],
+      "types/*": ["types/*"],
       "plugin/*": ["src/plugins/*"],
       "plugin": ["src/plugins/index"],
       "store/*": ["src/stores/*"],

@@ -1,9 +1,9 @@
 <!--
  * @Description: 登录Form
- * @Author: 张金龙
+ * @Author: Aaron
  * @Date: 2022-01-10 22:34:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-20 12:50:31
+ * @LastEditTime: 2022-01-20 13:27:11
 -->
 
 <template>
@@ -58,32 +58,43 @@
     >
       登 录
     </n-button>
-    <div class="enter-x">
-      <n-divider>
-        第三方登录
-      </n-divider>
-      <div class="flex w-3/5 justify-between mx-auto">
-        <n-button circle>
-          <template #icon>
-            <n-icon><icon-wechat /></n-icon>
-          </template>
-        </n-button>
-        <n-button circle>
-          <template #icon>
-            <n-icon><icon-twitter /></n-icon>
-          </template>
-        </n-button>
-        <n-button circle>
-          <template #icon>
-            <n-icon><icon-github /></n-icon>
-          </template>
-        </n-button>
-        <n-button circle>
-          <template #icon>
-            <n-icon><icon-alipay /></n-icon>
-          </template>
-        </n-button>
-      </div>
+    <n-divider class="-enter-y">
+      第三方登录
+    </n-divider>
+    <!-- 以下内容待处理 -->
+    <div class="flex w-3/5 justify-between mx-auto">
+      <n-button
+        circle
+        class="enter-y"
+      >
+        <template #icon>
+          <n-icon><icon-wechat /></n-icon>
+        </template>
+      </n-button>
+      <n-button
+        circle
+        class="enter-y"
+      >
+        <template #icon>
+          <n-icon><icon-twitter /></n-icon>
+        </template>
+      </n-button>
+      <n-button
+        circle
+        class="enter-y"
+      >
+        <template #icon>
+          <n-icon><icon-github /></n-icon>
+        </template>
+      </n-button>
+      <n-button
+        circle
+        class="enter-y"
+      >
+        <template #icon>
+          <n-icon><icon-alipay /></n-icon>
+        </template>
+      </n-button>
     </div>
   </div>
 </template>
