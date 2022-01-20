@@ -347,6 +347,11 @@
     "@typescript-eslint/types" "5.6.0"
     eslint-visitor-keys "^3.0.0"
 
+"@vicons/antd@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.nlark.com/@vicons/antd/download/@vicons/antd-0.11.0.tgz#3d28952d028aed712dca61cb81dbdb11454c5542"
+  integrity sha1-PSiVLQKK7XEtymHLgdvbEUVMVUI=
+
 "@vitejs/plugin-vue@^2.0.0":
   version "2.0.0"
   resolved "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-2.0.0.tgz#5b5879cae44f48874196d018213bf1dbaca8f4ea"

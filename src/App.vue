@@ -1,11 +1,7 @@
 <template>
   <n-config-provider :theme="theme">
     <router-view />
-    <n-global-style
-      :style="{
-        backgroundColor: 'red'
-      }"
-    />
+    <n-global-style />
   </n-config-provider>
 </template>
 
