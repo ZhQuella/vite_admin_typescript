@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-10 22:34:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-20 13:27:11
+ * @LastEditTime: 2022-06-19 12:20:25
 -->
 
 <template>
@@ -12,7 +12,7 @@
       <img :src="getSrc(theme?'logo/dark-logo.png':'logo/light-logo.png')">
     </div>
     <h2 class="mb-20px text-2xl font-bold text-center xl:text-3xl xl:text-left enter-x">
-      登录
+      {{ $t('LoginPage.LOGIN') }}
     </h2>
     <n-form label-placement="left">
       <n-form-item
@@ -21,7 +21,7 @@
       >
         <n-input
           size="large"
-          placeholder="请输入用户名"
+          :placeholder="$t('validationMessage.ENTER_USER_NAME')"
         >
           <template #prefix>
             <n-icon><icon-user-out /></n-icon>
@@ -34,7 +34,7 @@
       >
         <n-input
           size="large"
-          placeholder="请输入密码"
+          :placeholder="$t('validationMessage.ENTER_PASSWORD')"
           type="password"
           show-password-on="mousedown"
         >
@@ -47,7 +47,7 @@
         path="inputValue"
         class="enter-x"
       >
-        <n-checkbox>记住我</n-checkbox>
+        <n-checkbox>{{ $t('LoginPage.REMEMBER_ME') }}</n-checkbox>
       </n-form-item>
     </n-form>
     <n-button
@@ -56,10 +56,10 @@
       type="primary"
       class="enter-x"
     >
-      登 录
+      {{ $t('LoginPage.LOGIN') }}
     </n-button>
     <n-divider class="-enter-y">
-      第三方登录
+      {{ $t('LoginPage.THIRD_PARTY_LOGIN') }}
     </n-divider>
     <!-- 以下内容待处理 -->
     <div class="flex w-3/5 justify-between mx-auto">
@@ -104,6 +104,8 @@ import { computed } from "vue";
 import { getSrc } from "util/systemUtils";
 import { useThemeStore } from "store/theme";
 
+//  $i18n.locale = 'en' 
+//  $t('Login.login')
 
 const themeStore = useThemeStore();
 

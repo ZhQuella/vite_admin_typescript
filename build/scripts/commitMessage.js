@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2021-12-13 21:58:00
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2021-12-13 23:46:10
+ * @LastEditTime: 2022-06-19 13:06:02
  */
 
 
@@ -33,5 +33,5 @@ if (!commitRE.test(msg)) {
         ),
     );
     process.exit(1);
-  };
-};
+  }
+}
