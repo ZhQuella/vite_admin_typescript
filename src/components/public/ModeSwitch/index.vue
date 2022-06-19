@@ -52,13 +52,6 @@ const railStyle = ({ focused, checked }: { focused: boolean, checked: boolean })
   }
   return style
 };
-
-const initTheme = () => {
-  const value = theme.value?"dark":"light";
-  setTheme(`theme-${value}`);
-};
-
-initTheme();
 </script>
 
 <script lang="ts">
