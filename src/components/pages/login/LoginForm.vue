@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-10 22:34:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-19 12:20:25
+ * @LastEditTime: 2022-06-19 13:14:37
 -->
 
 <template>
@@ -103,9 +103,6 @@
 import { computed } from "vue";
 import { getSrc } from "util/systemUtils";
 import { useThemeStore } from "store/theme";
-
-//  $i18n.locale = 'en' 
-//  $t('Login.login')
 
 const themeStore = useThemeStore();
 

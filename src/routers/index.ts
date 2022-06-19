@@ -1,13 +1,13 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
+import LoginRouters from "./Login";
+import IndexRouters from "./Index";
+
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    {
-      path: "/",
-      name: "Login",
-      component: () => import("pages/Login.vue"),
-    },
+    ...LoginRouters,
+    ...IndexRouters
   ],
 });
 
