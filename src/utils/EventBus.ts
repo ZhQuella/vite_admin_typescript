@@ -3,12 +3,21 @@
  * @Author: Aaron
  * @Date: 2022-01-06 22:35:04
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-20 15:14:35
+ * @LastEditTime: 2022-06-25 12:42:08
  */
 
 import { busMap } from "types/bus";
 
 class EventBus {
+
+  static instance:EventBus;
+
+  private constructor():EventBus{
+    if (EventBus.instance === undefined) {
+      EventBus.instance = this;
+    }
+    return EventBus.instance;
+  }
 
   private eventMap: busMap = {};
 
@@ -48,4 +57,4 @@ class EventBus {
 
 }
 
-export default new EventBus;
+export default new EventBus();

@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2021-12-22 21:54:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-19 18:39:39
+ * @LastEditTime: 2022-06-25 14:53:04
  */
 
 import { App } from 'vue';
@@ -24,7 +24,10 @@ import {
   NSpace,
   NLayoutSider,
   NBreadcrumb,
-  NBreadcrumbItem
+  NBreadcrumbItem,
+  NDrawer,
+  NDrawerContent,
+  NTooltip
 } from "naive-ui";
 
 export default (app: App) => {
@@ -44,4 +47,7 @@ export default (app: App) => {
   app.component("NLayoutSider", NLayoutSider);
   app.component("NBreadcrumb", NBreadcrumb);
   app.component("NBreadcrumbItem", NBreadcrumbItem);
+  app.component("NDrawer", NDrawer);
+  app.component("NDrawerContent", NDrawerContent);
+  app.component("NTooltip", NTooltip);
 };

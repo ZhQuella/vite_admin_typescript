@@ -1,19 +1,44 @@
 <template>
   <n-space vertical>
     <n-menu
-      :collapsed="true"
+      :collapsed="collapsed"
       :options="menuOptions"
       :root-indent="10"
       :indent="10"
+      :mode="mode"
     />
   </n-space>
 </template>
 
 <script lang="ts" setup>
-import { h } from "vue";
+import { h, defineProps, computed } from "vue";
 import { NEllipsis } from 'naive-ui'
 import type { MenuOption } from 'naive-ui';
 import * as iconResult from '@vicons/antd';
+import { useNavModeStore } from "store/layoutMode";
+
+const props = defineProps({
+  an: {
+    type: Boolean,
+    default: false
+  }
+});
+
+const layoutModeStore = useNavModeStore();
+const layoutMode = computed(() => {
+  return layoutModeStore.layoutModel
+});
+const mode = computed(() => {
+  return layoutMode.value === "topNavigation"?"horizontal":undefined
+});
+
+const collapsed = computed(() => {
+  if(layoutMode.value === "topNavigation" ){
+    return false;
+  }
+  return props.an;
+});
+
 //  ! 未完成
 const menuOptions: MenuOption[] = [{
   label: '且听风吟1',

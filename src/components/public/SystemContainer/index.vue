@@ -1,6 +1,7 @@
 <template>
   <div class="system-container-wrap">
     <div
+      v-if="layoutMode === 'leftNavigation'"
       class="menu-container duration-350 overflow-hidden basis-210px -enter-x"
       :class="classNames"
     >
@@ -10,25 +11,25 @@
           class="block w-full"
         >
         <h1
-          v-if="!isMin"
+          v-if="!props.an"
           class="title font-bold absolute left-70px"
         >
           AzAadmin
         </h1>
       </div>
       <slot
-        v-if="true"
         name="menu"
       />
     </div>
-    <div class="continer-wrap">
+    <div class="continer-wrap flex w-full flex-col">
       <div class="header-container flex -enter-y">
-        <div class="flex">
+        <div class="flex pl-10px">
           <div class="flex">
             <n-button
+              v-if="layoutMode === 'leftNavigation'"
               text
-              class="my-4px mx-12px"
-              @click="isMin = !isMin"
+              class="my-4px mr-12px -enter-y"
+              @click="onAnChange"
             >
               <template #icon>
                 <n-icon>
@@ -44,57 +45,68 @@
                 <n-breadcrumb-item>
                   北京总行
                 </n-breadcrumb-item>
-                <n-breadcrumb-item>
-                  天津分行
-                </n-breadcrumb-item>
-                <n-breadcrumb-item>
-                  平山道支行
-                </n-breadcrumb-item>
               </n-breadcrumb>
             </div>
           </div>
         </div>
         <div class="flex-1">
           <div
-            v-if="false"
-            class="flex px-25px py-6px"
+            v-if="layoutMode === 'topNavigation'"
+            class="flex px-25px py-6px -enter-y"
           >
-            131
             <slot name="menu" />
           </div>
         </div>
         <div>
-          4564
+          <slot name="tool" />
         </div>
       </div>
-      <div class="view-container enter-y">
-        切换切换切换切换切换切换切换
+      <div
+        class="view-container enter-y flex-1"
+      >
+        <slot name="view" />
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-//  ! 未完成
-import { ref, computed } from "vue";
+import { computed, defineProps, defineEmits } from "vue";
 import { getSrc } from "util/systemUtils";
 import { useThemeStore } from "store/theme";
+import { useNavModeStore } from "store/layoutMode";
+
+const emit = defineEmits(['an-change'])
 
 const themeStore = useThemeStore();
 const theme = computed(() => {
   return themeStore.isDark
 });
 
-const isMin = ref(true);
+const layoutModeStore = useNavModeStore();
+const layoutMode = computed(() => {
+  return layoutModeStore.layoutModel
+});
+
+const props = defineProps({
+  an: {
+    type: Boolean,
+    default: false
+  }
+});
 
 const classNames = computed(() => {
   return [{
-    min: isMin.value
+    min: props.an
   }]
 });
 
+const onAnChange = () => {
+  emit("an-change", props.an);
+};
+
 const menuIconName = computed(() => {
-  return isMin.value?"IconMenuUnfoldOutlined":"IconMenuFoldOutlined";
+  return props.an?"IconMenuUnfoldOutlined":"IconMenuFoldOutlined";
 });
 
 </script>

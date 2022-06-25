@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-20 12:58:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-19 12:51:33
+ * @LastEditTime: 2022-06-25 13:58:32
 -->
 
 <template>
@@ -12,9 +12,12 @@
     :options="internationOption"
     @select="onHandleSelect"
   >
-    <div class="locale-select-btn min-w-60px text-center">
-      {{ $t('publicComponents.LANGUAGE') }}: {{ context }}
-    </div>
+    <n-button
+      quaternary
+      class="locale-select-btn inline-block min-w-60px text-center"
+    >
+      {{ context }}
+    </n-button>
   </n-dropdown>
 </template>
 

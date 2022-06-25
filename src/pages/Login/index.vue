@@ -2,6 +2,7 @@
   <div class="login-page-warp">
     <div class="login-mode-switch flex justify-between min-w-130px enter-x">
       <div class="mr-14px">
+        <span class="mr-5px">{{ $t('publicComponents.LANGUAGE') }}:</span>
         <locale-dropdown />
       </div>
       <mode-switch />
