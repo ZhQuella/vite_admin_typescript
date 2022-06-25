@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, nextTick } from "vue";
 import SyetemTab from "components/pages/Index/SyetemTab.vue";
-//  onFullResize
 import { addEventResize } from "util/ElementResize";
+import eventBus from "util/EventBus";
 
 const height = ref(0);
 const fullStyle = computed(() => {
@@ -23,11 +23,17 @@ const fullStyle = computed(() => {
   }
 });
 
-const onFullResize = () => {
+const onFullResize = async () => {
+  await nextTick();
+  const headerDom = document.querySelector(".header-container");
+  const headerClientHeight = headerDom?.clientHeight || 0;
   const doc = document.body;
-  console.log(doc.clientHeight);
-  height.value = doc.clientHeight - 50;
+  height.value = doc.clientHeight - headerClientHeight;
 };
+
+onMounted(() => {
+  eventBus.on("fullscreen", onFullResize);
+});
 
 onMounted(() => {
   const doc = document.documentElement;
