@@ -13,5 +13,15 @@ export default {
     LOGIN: 'Log In',
     REMEMBER_ME: "Remember Me",
     THIRD_PARTY_LOGIN: "Third-party Login"
+  },
+  //  首页
+  IndexPage: {
+    SYSTEM_SETUP_TITLE: "Project Configuration",
+    SYSTEM_SET_CONFIG: {
+      THEME: "The theme",
+      NAV_MODE: "Navigation mode",
+      NAV_MODE_LEFT: "The left navigation",
+      NAV_MODE_TOP: "The top navigation"
+    }
   }
 }

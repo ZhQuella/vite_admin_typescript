@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-20 12:38:40
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-01-20 12:46:15
+ * @LastEditTime: 2022-06-25 12:58:01
  */
 
 import { App } from 'vue';
@@ -16,7 +16,10 @@ import {
   UserOutlined, 
   LockOutlined,
   EyeOutlined,
-  EyeInvisibleOutlined
+  EyeInvisibleOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  SettingFilled
 } from '@vicons/antd';
 
 export default (app: App) => {
@@ -28,4 +31,7 @@ export default (app: App) => {
   app.component("IconLockOut", LockOutlined);
   app.component("IconEyeOut", EyeOutlined);
   app.component("IconEyeInvisible", EyeInvisibleOutlined);
+  app.component("IconMenuFoldOutlined", MenuFoldOutlined);
+  app.component("IconMenuUnfoldOutlined", MenuUnfoldOutlined);
+  app.component("IconSettingFilled", SettingFilled);
 };

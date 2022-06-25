@@ -5,3 +5,12 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+.animate__animated.animate__bounce {
+  --animate-duration: 100ms;
+  --animate-delay: 0.9s;
+}
+
+.n-dropdown-option-body__prefix {
+  padding: 10px;
+}

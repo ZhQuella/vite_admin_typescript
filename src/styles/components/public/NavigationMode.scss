@@ -1,0 +1,16 @@
+.navigation-model-wrap {
+  .navigation-model-item {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    .principal {
+      background-color: $menuBg;
+    }
+    .view {
+      background-color: $light;
+    }
+    &.active {
+      border: 2px solid $menuBg;
+    }
+  }
+}

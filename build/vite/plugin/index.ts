@@ -8,7 +8,7 @@ import windiCSS from 'vite-plugin-windicss';
 
 import path from 'path'; 
 
-export const createPlugin = (isBuild: boolean):Plugin[] => {
+export const createPlugin = ():Plugin[] => {
   
   const vitePlugins = [
     eslintPlugin({
