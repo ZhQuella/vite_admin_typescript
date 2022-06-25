@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2021-12-22 21:54:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-25 14:53:04
+ * @LastEditTime: 2022-06-25 19:35:55
  */
 
 import { App } from 'vue';
@@ -27,7 +27,11 @@ import {
   NBreadcrumbItem,
   NDrawer,
   NDrawerContent,
-  NTooltip
+  NTooltip,
+  NTabs,
+  NTabPane,
+  NTab,
+  NScrollbar 
 } from "naive-ui";
 
 export default (app: App) => {
@@ -50,4 +54,8 @@ export default (app: App) => {
   app.component("NDrawer", NDrawer);
   app.component("NDrawerContent", NDrawerContent);
   app.component("NTooltip", NTooltip);
+  app.component("NTabs", NTabs);
+  app.component("NTabPane", NTabPane);
+  app.component("NTab", NTab);
+  app.component("NScrollbar", NScrollbar);
 };

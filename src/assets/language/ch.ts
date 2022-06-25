@@ -21,6 +21,14 @@ export default {
       NAV_MODE: "导航栏模式",
       NAV_MODE_LEFT: "左侧导航",
       NAV_MODE_TOP: "顶部导航"
+    },
+    MENU_LIST: {
+      RELOAD: "重新加载",
+      CLOSE_TAG: "关闭标签",
+      CLOSE_LEFT_TAG: "关闭左侧标签",
+      CLOSE_RIGHT_TAG: "关闭右侧标签",
+      CLOSE_OTHER_TAG: "关闭其他标签",
+      CLOSE_ALL_TAG: "关闭所有标签"
     }
   }
 }
