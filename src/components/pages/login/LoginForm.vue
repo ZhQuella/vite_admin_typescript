@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-10 22:34:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-19 14:34:19
+ * @LastEditTime: 2022-06-25 17:52:34
 -->
 
 <template>
@@ -135,10 +135,11 @@ const loginForm = reactive({
   keep: false
 });
 
+const i18n = useI18n();
 
 const getRules = computed(() => {
-  const userNameMessage = useI18n().t('validationMessage.ENTER_USER_NAME');
-  const passwordMessage = useI18n().t('validationMessage.ENTER_PASSWORD')
+  const userNameMessage = i18n.t('validationMessage.ENTER_USER_NAME');
+  const passwordMessage = i18n.t('validationMessage.ENTER_PASSWORD')
 
   return {
     userName: [{

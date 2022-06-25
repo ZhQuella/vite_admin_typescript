@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-20 12:38:40
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-25 12:58:01
+ * @LastEditTime: 2022-06-25 16:59:31
  */
 
 import { App } from 'vue';
@@ -19,7 +19,11 @@ import {
   EyeInvisibleOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  SettingFilled
+  SettingFilled,
+  ReloadOutlined,
+  FullscreenExitOutlined,
+  FullscreenOutlined,
+  DownOutlined
 } from '@vicons/antd';
 
 export default (app: App) => {
@@ -34,4 +38,8 @@ export default (app: App) => {
   app.component("IconMenuFoldOutlined", MenuFoldOutlined);
   app.component("IconMenuUnfoldOutlined", MenuUnfoldOutlined);
   app.component("IconSettingFilled", SettingFilled);
+  app.component("IconReloadOutlined", ReloadOutlined);
+  app.component("IconFullscreenExitOutlined", FullscreenExitOutlined);
+  app.component("IconFullscreenOutlined", FullscreenOutlined);
+  app.component("IconDownOutlined", DownOutlined);
 };

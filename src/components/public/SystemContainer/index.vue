@@ -2,6 +2,7 @@
   <div class="system-container-wrap">
     <div
       v-if="layoutMode === 'leftNavigation'"
+      v-show="!isFullscreen"
       class="menu-container duration-350 overflow-hidden basis-210px -enter-x"
       :class="classNames"
     >
@@ -22,7 +23,10 @@
       />
     </div>
     <div class="continer-wrap flex w-full flex-col">
-      <div class="header-container flex -enter-y">
+      <div
+        v-show="!isFullscreen"
+        class="header-container flex -enter-y"
+      >
         <div class="flex pl-10px">
           <div class="flex">
             <n-button
@@ -52,7 +56,7 @@
         <div class="flex-1">
           <div
             v-if="layoutMode === 'topNavigation'"
-            class="flex px-25px py-6px -enter-y"
+            class="flex px-25px py-4px -enter-y"
           >
             <slot name="menu" />
           </div>
@@ -71,12 +75,14 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, defineProps, defineEmits } from "vue";
+import { computed, defineProps, defineEmits, onMounted, ref } from "vue";
 import { getSrc } from "util/systemUtils";
 import { useThemeStore } from "store/theme";
 import { useNavModeStore } from "store/layoutMode";
 
-const emit = defineEmits(['an-change'])
+import eventBus from "util/EventBus";
+
+const emit = defineEmits(['an-change']);
 
 const themeStore = useThemeStore();
 const theme = computed(() => {
@@ -109,6 +115,16 @@ const menuIconName = computed(() => {
   return props.an?"IconMenuUnfoldOutlined":"IconMenuFoldOutlined";
 });
 
+
+const isFullscreen = ref(false);
+
+const onFullscreen = (value: boolean) => {
+  isFullscreen.value = value;
+};
+
+onMounted(() => {
+  eventBus.on("fullscreen", onFullscreen);
+});
 </script>
 
 <script lang="ts">
