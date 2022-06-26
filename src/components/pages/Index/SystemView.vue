@@ -2,10 +2,17 @@
   <div
     :style="fullStyle"
     class="items-stretch h-full overflow-hidden flex flex-col"
-  >
+  > 
     <syetem-tab />
     <n-scrollbar>
-      <router-view :height="height" />
+      <router-view
+        v-slot="{ Component }"
+        :height="height"
+      >
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     </n-scrollbar>
   </div>
 </template>
@@ -32,12 +39,9 @@ const onFullResize = async () => {
 };
 
 onMounted(() => {
-  eventBus.on("fullscreen", onFullResize);
-});
-
-onMounted(() => {
   const doc = document.documentElement;
   addEventResize(doc, onFullResize);
+  eventBus.on("fullscreen", onFullResize);
 });
 </script>
 

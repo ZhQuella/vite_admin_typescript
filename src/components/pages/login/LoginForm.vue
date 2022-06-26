@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-10 22:34:37
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-25 17:52:34
+ * @LastEditTime: 2022-06-26 15:15:14
 -->
 
 <template>
@@ -167,7 +167,7 @@ const onLoginClick = async () => {
       localStorage.removeItem("account");
     }
     //  登录逻辑
-    router.push({ name: "Index" });
+    router.push({ name: "WorkBench" });
     //  存储Token
     sessionStorage.setItem("token", `${+new Date()}`);
   }catch{

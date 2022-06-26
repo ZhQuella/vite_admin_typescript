@@ -1,16 +1,13 @@
 <template>
-  <div>
-    <h1
-      v-for="(item, index) in 1000"
-      :key="index"
-    >
-      {{ props.height }}
-    </h1>
-  </div>
+  {{ num }}
+  {{ props.height }}
+  <n-input v-model:value="num" />
 </template>
 
-<script setup>
-import { defineProps } from "vue";
+<script lang="ts" setup>
+import { defineProps, ref } from "vue";
+
+const num = ref("");
 
 const props = defineProps({
   height: {
@@ -21,6 +18,9 @@ const props = defineProps({
 
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<script lang="ts">
+import { defineComponent } from "vue";
+export default defineComponent({
+  name: "WorkBench"
+});
+</script>
