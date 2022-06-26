@@ -10,7 +10,7 @@
     "@vicons/antd": "^0.11.0",
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
-    "naive-ui": "^2.23.1",
+    "naive-ui": "^2.30.6",
     "pinia": "^2.0.6",
     "reset-css": "^5.0.1",
     "resize-observer-polyfill": "^1.5.1",

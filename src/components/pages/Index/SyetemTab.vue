@@ -1,12 +1,16 @@
 <template>
   <n-tabs
-    v-model:value="value"
+    v-model:value="tabActiveValue"
     type="card"
     size="small"
+    :on-update:value="onTabsUpdate"
   >
     <n-tab
-      name="工作台"
-      closable
+      v-for="(item, index) in openTabLists"
+      :key="index"
+      :name="item.name"
+      :tab="item.tab"
+      :closable="item.closable"
       @contextmenu="onHandleContextMenu"
     />
     <template #suffix>
@@ -62,11 +66,16 @@
 </template>
 
 <script lang="ts" setup>
-import { reactive, ref, nextTick, computed } from "vue";
+import { reactive, ref, nextTick, computed, onMounted } from "vue";
 import { renderIcon } from "util/index";
 import { useI18n } from "vue-i18n";
-
+import type { MenuOption } from 'naive-ui';
 import eventBus from "util/EventBus";
+import { tabOption } from "types/index";
+import { useRouter, useRoute } from "vue-router";
+import { useTabOptionsStore } from "store/tabOptions";
+import { useTabs } from "hooks/useTabs";
+import { contextMenuType } from "types/index";
 
 import {
   ReloadOutlined,
@@ -77,13 +86,17 @@ import {
   CloseCircleOutlined
 } from '@vicons/antd';
 
+const contextmenuMethod = useTabs();
+const router = useRouter();
+const route = useRoute();
 const i18n = useI18n();
-
+const tabStore = useTabOptionsStore();
+const tabActiveValue = ref("");
+const openTabLists: tabOption[] = reactive([]);
 const options = computed(() => [{
   label: i18n.t("IndexPage.MENU_LIST.RELOAD"),
   key: 'redload',
-  icon: renderIcon(ReloadOutlined),
-  disabled: true
+  icon: renderIcon(ReloadOutlined)
 },{
   label: i18n.t("IndexPage.MENU_LIST.CLOSE_TAG"),
   key: 'closeTag',
@@ -104,20 +117,19 @@ const options = computed(() => [{
   key: 'd1'
 },{
   label: i18n.t("IndexPage.MENU_LIST.CLOSE_OTHER_TAG"),
-  key: 'CloseOtherTag',
+  key: 'closeOtherTag',
   icon: renderIcon(CloseSquareOutlined)
 },{
   label: i18n.t("IndexPage.MENU_LIST.CLOSE_ALL_TAG"),
-  key: 'CloseAllTag',
+  key: 'closeAllTag',
   icon: renderIcon(CloseCircleOutlined)
 }]);
-
 const position = reactive({
   x: 0,
   y: 0
 });
-
 const showMenu = ref(false);
+const isFullscreen = ref(false);
 
 const onHandleContextMenu = async (e: MouseEvent) => {
   e.preventDefault();
@@ -132,12 +144,10 @@ const onHandleContextMenu = async (e: MouseEvent) => {
 const onClickoutside = () => {
   showMenu.value = false;
 };
-
-const onHandleSelect = () => {
+const onHandleSelect = (value: contextMenuType) => {
+  contextmenuMethod[value]();
   showMenu.value = false;
 };
-
-const isFullscreen = ref(false);
 
 const fullscreenComponentName = computed(() => {
   return isFullscreen.value?"icon-fullscreen-exit-outlined":"icon-fullscreen-outlined";
@@ -148,6 +158,36 @@ const onFullscreen = () => {
   eventBus.emit("fullscreen", isFullscreen.value);
 };
 
+const onOpenPage = (option: MenuOption) => { 
+  const { key: name, label: tab } = option;
+  const index = openTabLists.map(el => el.name).findIndex((el) => el === name);
+  if (index === -1) { 
+    openTabLists.push({ tab , name, closable: true } as tabOption);
+  }
+  tabActiveValue.value = name as string;
+  const value = JSON.stringify(openTabLists);
+  tabStore.tabOptions = value;
+  sessionStorage.setItem("tabs", value);
+};
+
+const onTabsUpdate = (name: string) => {
+  router.push({ name });
+  tabActiveValue.value = name;
+  eventBus.emit("changePage", name);
+};
+
+const init = async () => {
+  const tabs = tabStore.tabOptions ?
+    JSON.parse(tabStore.tabOptions) as tabOption[] :
+    [{ "tab": "工作台", "name": "WorkBench", "closable": false }];
+  openTabLists.push(...tabs);
+  tabActiveValue.value = route.name as string;
+};
+
+onMounted(() => {
+  init();
+  eventBus.on("openPage", onOpenPage);
+});
 </script>
 
 <script lang="ts">

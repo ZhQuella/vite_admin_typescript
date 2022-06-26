@@ -48,7 +48,6 @@ const isOpen = ref(false);
 const onSetUpOpen = () => {
   isOpen.value = true;
 };
-
 </script>
 
 <script lang="ts">

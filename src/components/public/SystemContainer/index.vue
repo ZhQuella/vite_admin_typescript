@@ -65,9 +65,7 @@
           <slot name="tool" />
         </div>
       </div>
-      <div
-        class="view-container enter-y flex-1"
-      >
+      <div class="view-container enter-y flex-1">
         <slot name="view" />
       </div>
     </div>

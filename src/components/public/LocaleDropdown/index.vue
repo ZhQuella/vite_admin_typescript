@@ -3,7 +3,7 @@
  * @Author: Aaron
  * @Date: 2022-01-20 12:58:51
  * @LastEditors: Please set LastEditors
- * @LastEditTime: 2022-06-25 13:58:32
+ * @LastEditTime: 2022-06-26 16:59:11
 -->
 
 <template>
@@ -32,7 +32,8 @@ const { locale } = useI18n();
 const localeStore = useLocaleStore();
 
 const context = computed(() => {
-  const localeItem: localeInof[] = internationOption.filter(el => (el.key === localeStore.locale));
+  const locale = localeStore.locale || localStorage.getItem("locale");
+  const localeItem: localeInof[] = internationOption.filter(el => (el.key === locale));
   return localeItem[0].label;
 });
 const onHandleSelect = (value: string) => {
